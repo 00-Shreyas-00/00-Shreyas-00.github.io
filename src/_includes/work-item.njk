@@ -1,0 +1,18 @@
+{# Shared row used by Home "Featured works" and the Work listing. Expects `work`. #}
+<article class="work-item">
+  <a class="work-item__thumb" href="{{ work.url }}" tabindex="-1" aria-hidden="true">
+    {% if work.data.image %}
+      <img src="{{ work.data.image }}" alt="" width="246" height="180" loading="lazy">
+    {% else %}
+      <span class="thumb-placeholder">{{ work.data.thumbLabel or work.data.title }}</span>
+    {% endif %}
+  </a>
+  <div class="work-item__body">
+    <h{{ itemHeading or 3 }} class="work-item__title"><a href="{{ work.url }}">{{ work.data.title }}</a></h{{ itemHeading or 3 }}>
+    <p class="meta">
+      {% if work.data.year %}<span class="badge">{{ work.data.year }}</span>{% endif %}
+      <span class="meta__category">{{ work.data.category }}</span>
+    </p>
+    <p class="work-item__summary">{{ work.data.summary }}</p>
+  </div>
+</article>

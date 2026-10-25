@@ -1,0 +1,4 @@
+node_modules/
+_site/
+# Figma exports kept locally for reference only
+design/

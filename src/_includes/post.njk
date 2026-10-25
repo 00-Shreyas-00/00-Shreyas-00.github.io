@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+{# The template has no post-detail frame; this reuses the Work Detail layout and type styles. #}
+<article class="container container--narrow work-detail">
+  <h1 class="work-detail__title">{{ title }}</h1>
+  <p class="post-meta post-meta--large"><time datetime="{{ page.date.toISOString() }}">{{ page.date | displayDate }}</time><span class="post-meta__sep" aria-hidden="true"></span><span class="meta__category">{{ topics }}</span></p>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+</article>

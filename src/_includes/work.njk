@@ -1,0 +1,20 @@
+---
+layout: base.njk
+nav: works
+---
+<article class="container container--narrow work-detail">
+  <h1 class="work-detail__title">{{ title }}</h1>
+  <p class="meta">
+    {% if year %}<span class="badge badge--accent">{{ year }}</span>{% endif %}
+    <span class="work-detail__tags">{{ stack }}</span>
+  </p>
+  <p class="work-detail__intro">{{ summary }}{% if repo %} <a href="{{ repo }}">View the code on GitHub</a>.{% endif %}</p>
+
+  {% if image %}
+    <img class="work-detail__image" src="{{ image }}" alt="{{ imageAlt }}">
+  {% endif %}
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+</article>

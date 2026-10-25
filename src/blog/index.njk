@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Blog
+nav: blog
+permalink: /blog/
+---
+<section class="container container--narrow">
+  <h1 class="page-title">Blog</h1>
+  {% for post in collections.posts %}
+  <article class="post-item">
+    <h2 class="post-item__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <p class="post-meta post-meta--large"><time datetime="{{ post.date.toISOString() }}">{{ post.date | displayDate }}</time><span class="post-meta__sep" aria-hidden="true"></span><span class="meta__category">{{ post.data.topics }}</span></p>
+    <p>{{ post.data.summary }}</p>
+  </article>
+  {% else %}
+  <p class="empty-state">No posts yet. Write-ups on backend, DevOps and cloud will appear here.</p>
+  {% endfor %}
+</section>

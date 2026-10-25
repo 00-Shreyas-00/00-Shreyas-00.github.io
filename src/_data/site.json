@@ -1,0 +1,15 @@
+{
+  "name": "Shreyas Shinde",
+  "firstName": "Shreyas",
+  "role": "Software Engineer",
+  "url": "https://00-shreyas-00.github.io",
+  "description": "Shreyas Shinde — Software Engineer working across mobile, backend, DevOps and cloud.",
+  "intro": "SDE at VirasaTechlabs, building mobile apps in Kotlin and Swift. I also work across backend, DevOps and cloud with Docker, Kubernetes, AWS and CI/CD, and I am preparing for the CKA exam in 2027.",
+  "resume": "/assets/Shreyas_Shinde_Resume.pdf",
+  "email": "shreyas.stark24@gmail.com",
+  "social": {
+    "github": "https://github.com/00-Shreyas-00",
+    "linkedin": "https://www.linkedin.com/in/shreyas-shinde-a04530258"
+  },
+  "copyrightYear": 2026
+}

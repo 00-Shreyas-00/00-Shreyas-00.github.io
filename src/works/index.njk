@@ -1,0 +1,13 @@
+---
+layout: base.njk
+title: Work
+nav: works
+itemHeading: 2
+permalink: /works/
+---
+<section class="container container--narrow works-list">
+  <h1 class="page-title page-title--heavy">Work</h1>
+  {% for work in collections.works %}
+    {% include "work-item.njk" %}
+  {% endfor %}
+</section>

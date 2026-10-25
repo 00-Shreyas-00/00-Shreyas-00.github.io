@@ -1,0 +1,39 @@
+---
+layout: base.njk
+---
+<section class="hero container">
+  <div class="hero__text">
+    <h1 class="hero__title">Hi, I am {{ site.firstName }},<br>{{ site.role }}</h1>
+    <p class="hero__intro">{{ site.intro }}</p>
+    <a class="button" href="{{ site.resume }}" download>Download Resume</a>
+  </div>
+  <img class="hero__photo" src="/assets/img/profile.webp" alt="Illustrated portrait of Shreyas" width="243" height="243">
+</section>
+
+{# The design's "Recent posts" band only appears once there is at least one post. #}
+{% if collections.posts.length %}
+<section class="recent-posts" aria-labelledby="recent-posts-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title" id="recent-posts-title">Recent posts</h2>
+      <a class="section-head__link" href="/blog/">View all</a>
+    </div>
+    <div class="post-cards">
+      {% for post in collections.posts %}{% if loop.index0 < 2 %}
+      <article class="post-card">
+        <h3 class="post-card__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <p class="post-meta"><time datetime="{{ post.date.toISOString() }}">{{ post.date | displayDate }}</time><span class="post-meta__sep" aria-hidden="true"></span><span>{{ post.data.topics }}</span></p>
+        <p>{{ post.data.summary }}</p>
+      </article>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="featured container" aria-labelledby="featured-title">
+  <h2 class="section-title" id="featured-title">Featured works</h2>
+  {% for work in collections.works %}{% if work.data.featured %}
+    {% include "work-item.njk" %}
+  {% endif %}{% endfor %}
+</section>

@@ -1,0 +1,4 @@
+{
+  "layout": "work.njk",
+  "permalink": "/works/{{ page.fileSlug }}/"
+}
